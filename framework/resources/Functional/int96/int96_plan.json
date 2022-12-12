@@ -1,0 +1,34 @@
+{
+    "testId": "int96_plan",
+    "type": "group",
+    "description": "int96 plan tests",
+    "categories": [ "functional" ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.subqueries",
+            "output-format": "tsv",
+            "expected-file": ".*.e",
+            "verification-type": [
+                "regex"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+            "mode": "cp",
+            "src": "Datasources/subqueries",
+            "dest": "subqueries"
+        },
+        {
+            "mode": "rm",
+            "src": "",
+            "dest": "subqueries/hive1_parquet_part"
+        },
+        {
+            "mode": "ddl",
+            "src": "Datasources/subqueries/create_tables.sql",
+            "dest": ""
+        }
+    ]
+}

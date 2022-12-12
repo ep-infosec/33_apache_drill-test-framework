@@ -1,0 +1,46 @@
+{
+    "testId": "min_max_dir-functional",
+    "type": "group",
+    "description": "Test mindir and maxdir function queries via jdbc",
+    "categories": [
+        "functional"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.drillTestDir",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+      {
+        "mode": "rm",
+        "src": "",
+        "dest": "min_max_dir_metadatacache"
+      },
+      {
+         "mode": "cp",
+         "src": "Datasources/min_max_dir/data",
+         "dest": "min_max_dir"
+      },
+      {
+         "mode": "cp",
+         "src": "Datasources/min_max_dir/data",
+         "dest": "min_max_dir_metadatacache"
+      },
+      {
+         "mode": "cp",
+         "src": "Datasources/min_max_dir/drill-3474",
+         "dest": "drill-3474"
+      },
+      {
+        "mode": "ddl",
+        "src": "Datasources/min_max_dir/scripts/refresh_metadata.ddl",
+        "dest": ""
+      }
+    ]
+}

@@ -1,0 +1,7 @@
+.*Screen.*
+   .*Project.*
+     .*StreamAgg.*
+      .*Project.*
+       .*SelectionVectorRemover.*
+         .*Filter.*
+           .*Scan.*numFiles=2.*columns=\[`dir0`, `o_custkey`\]\]\]\)

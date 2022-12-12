@@ -1,0 +1,58 @@
+{
+  "testId": "decimal_fragments_plan",
+  "type": "group",
+  "description": "Testing Drill queries plan with major and minor fragments",
+  "submit-type": "jdbc",
+  "categories": [
+    "functional"
+  ],
+  "matrices": [
+    {
+      "query-file": ".*.sql.explain",
+      "schema": "dfs.drillTestDir",
+      "output-format": "tsv",
+      "expected-file": ".*.plan",
+      "verification-type": [
+        "regex"
+      ]
+    }
+  ],
+  "datasources": [
+    {
+       "mode": "gen",
+       "src": "Datasources/ctas/decimal/fragments/decimal_fragments.sh",
+       "dest": ""
+    },
+    {
+      "mode": "gen",
+      "src": "Datasources/ctas/decimal/fragments/decimal_fragments.sh $DRILL_TESTDATA_DIR",
+      "dest": ""
+    },
+    {
+      "mode": "mkdir",
+      "src": "",
+      "dest": "decimal/fragments"
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/ctas/decimal/fragments/decimal_big.tsv",
+      "dest": "decimal/fragments/decimal_big.tsv"
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/ctas/decimal/fragments/decimal_big_zero_prec.tsv",
+      "dest": "decimal/fragments/decimal_big_zero_prec.tsv"
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/ctas/decimal/fragments/decimal_big_zero_scale.tsv",
+      "dest": "decimal/fragments/decimal_big_zero_scale.tsv"
+    },
+    {
+      "mode": "ddl",
+      "src:": "Datasources/ctas/decimal/fragments/decimal_fragments.ddl",
+      "dest": ""
+    }
+  ]
+}
+

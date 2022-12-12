@@ -1,0 +1,1 @@
+select * from (select * from `filter/pushdown/DRILL_5796_test_data.parquet`) where id <= 100 order by id limit 5;

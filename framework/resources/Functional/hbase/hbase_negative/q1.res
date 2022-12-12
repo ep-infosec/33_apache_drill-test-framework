@@ -1,0 +1,1 @@
+.*VALIDATION ERROR: From line 1, column 15 to line 1, column 19: Object 'non_existent_tbl' not found within 'hbase'.*

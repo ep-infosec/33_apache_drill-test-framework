@@ -1,0 +1,4 @@
+.*
+  StreamAgg.*
+    Project.*
+      Scan.*selectionRoot=.*partition_pruning/hive/text/lineitem_hierarchical_intstring.*numFiles=12.*columns=\[\].*files=.*

@@ -1,0 +1,37 @@
+{
+    "testId": "complex_type_parquet",
+    "type": "group",
+    "description": "Test queries via jdbc",
+    "submit-type": "jdbc",
+    "categories": [
+        "functional"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.drillTestDirComplexParquet",
+            "output-format": "tsv",
+            "expected-file": ".*.e",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+            "mode": "rm",
+            "src": "",
+            "dest": "complex/parquet/complex.json"
+        },
+        {
+            "mode": "mkdir",
+            "src": "",
+            "dest": "complex/parquet"
+        },
+        {
+            "mode": "ddl",
+            "src": "Datasources/ctas/create_tables_complex_parquet.ddl",
+            "dest": ""
+        }
+    ]
+}

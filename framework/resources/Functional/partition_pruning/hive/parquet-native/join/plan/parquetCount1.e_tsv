@@ -1,0 +1,3 @@
+.*HashJoin.*
+.*HiveDrillNativeParquetScan.*numFiles=7.*
+.*HiveDrillNativeParquetScan.*numFiles=8.*

@@ -1,0 +1,152 @@
+########################################
+# Drill automation configuration file
+# Uncomment to provide local value
+########################################
+
+########################################
+# Drillbits
+########################################
+#DRILLBITS=IPADDR1,IPADDR2,IPADDR3,IPADDR4, ...
+
+########################################
+# Number of Drillbits
+########################################
+#NUMBER_OF_CLUSTER_NODES=4
+
+########################################
+# Drill home
+########################################
+#DRILL_HOME=/opt/drill
+
+########################################
+# Drill test data dir
+########################################
+#DRILL_TEST_DATA_DIR=framework/resources
+
+########################################
+# Drill actual resultset dir
+########################################
+#DRILL_OUTPUT_DIR=drill-output
+
+########################################
+# Drill report dir
+########################################
+#DRILL_REPORTS_DIR=drill-reports
+#DRILL_REPORTS_DFS_DIR=/drill/reports
+
+########################################
+# Location of hadoop system drill is 
+# running in
+########################################
+#HADOOP_INSTALL_LOC=/opt/mapr
+
+########################################
+# Path to the distributed system where
+# data is to be populated
+########################################
+#DRILL_TESTDATA=/drill/testdata
+
+########################################
+# Zookeeper list
+########################################
+#ZOOKEEPERS=IPADDR1:5181/drill/drillbits1
+
+########################################
+# DRILL JDBC driver
+########################################
+# MapR DRILL JDBC driver
+#JDBC_DRIVER=com.mapr.drill.jdbc41.Driver
+
+# Apache DRILL JDBC driver
+#JDBC_DRIVER=org.apache.drill.jdbc.Driver
+
+########################################
+# JDBC DRIVER CLASSPATH
+########################################
+#JDBC_DRIVER_CP=/root/DrillJDBC41/*
+#JDBC_DRIVER_CP=${DRILL_HOME}/jars/jdbc-driver/*
+
+########################################
+# DRILL JDBC CONNECTION STRING
+########################################
+#CONNECTION_STRING=jdbc:drill:zk\=x.x.x.x:5181/zk_root/cluster_id
+
+########################################
+# Drill storage plugin server
+########################################
+#DRILL_STORAGE_PLUGIN_SERVER=IPADDR1
+
+########################################
+# Drill storage plugin server port
+########################################
+#DRILL_STORAGE_PLUGIN_SERVER_PORT=8047
+
+########################################
+# Test timeout (seconds)
+########################################
+#TIME_OUT_SECONDS=1200
+
+########################################
+# Restart drill script
+########################################
+#RESTART_DRILL_SCRIPT=framework/scripts/restart_drill_script
+
+########################################
+# Authentication Mechanisms
+########################################
+#AUTH_MECHANISM=MAPRSASL
+#AUTH_MECHANISM=PLAIN
+
+########################################
+# Is HTTPS enabled
+########################################
+#HTTPS_ENABLED=true
+
+########################################
+# Is SSL enabled
+########################################
+#SSL_ENABLED=true
+
+########################################
+# Truststore
+########################################
+#TRUSTSTORE_PATH=/opt/mapr/conf/ssl_truststore
+
+########################################
+# Truststore Password
+########################################
+#TRUSTSTORE_PASSWORD=mapr123
+
+########################################
+# Kerberos Principal
+########################################
+#KERBEROS_PRINCIPAL=username/fully.qualified.domain.name@YOUR-REALM.COM
+
+########################################
+# Is secure cluster?
+########################################
+#IS_SECURE_CLUSTER=true
+
+########################################
+### Tests run as the following user
+##########################################
+#USERNAME=user1
+#PASSWORD=pass1
+
+#export ZOOKEEPER_HOST=IPADDR1
+#export CLUSTER_NAME=Drill-ATS
+#export ZK_ROOT=drill-ats-build
+
+#export DRILL_USER=root
+#export CLUSH_GROUP=all
+export DRILL_STORAGE_PLUGIN_SERVER
+export DRILL_HOME=/opt/drill
+
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
+export M2=$M2_HOME/bin
+export PATH=.:$M2:$PATH
+
+export DRILL_VERSION=$(grep 'git.build.version' ${DRILL_HOME}/git.properties | tr '=' '\n' | tail -1)
+export HADOOP_VERSION=1.0.3-mapr-3.0.2
+export USERNAME
+export PASSWORD

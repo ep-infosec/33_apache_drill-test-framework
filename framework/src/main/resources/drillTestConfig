@@ -1,0 +1,48 @@
+# List of IP addresses of nodes configured with drillbit services
+DRILLBITS=IPADDR1,IPADDR2,IPADDR3,IPADDR4, ...
+
+# Number of cluster nodes in the cluster, will be matched with number of drillbits
+NUMBER_OF_CLUSTER_NODES=4
+
+# Path to where Drill binaries are installed 
+DRILL_HOME=/opt/drill/
+
+# Drill Version
+DRILL_VERSION=1.2.0-SNAPSHOT
+
+# Parent directory of test suites. Relative path to the framework directory
+DRILL_TEST_DATA_DIR=resources
+
+# Directory into which results from tests are written into
+DRILL_OUTPUT_DIR=drill-output
+
+# Hadoop Version (Please specify maven version for Hadoop Project (for groupId=org.apache.hadoop)
+HADOOP_VERSION=version
+# For Apache Hadoop, version=2.7.0
+# For MapR Hadoop, version=2.7.0-mapr-1808
+
+# Path on the distributed system where test data is to be populated (currently cannot be modified - create the directory if it doesn't exist).
+DRILL_TESTDATA=/drill/testdata
+
+# Zookeeper node IP address with port and path to drill node inside Zookeeper
+ZOOKEEPERS=IPADDR1:5181/drill/drillbits1
+
+# DRILL JDBC CONNECTION STRING
+CONNECTION_STRING=jdbc:drill:zk\=x.x.x.x:5181/zk_root/cluster_id
+
+# THE IPADDRESS OF THE NODE WHICH WILL BE USED BY THE REST API TO UPDATE THE STORAGE PLUGIN INFORMATION
+DRILL_STORAGE_PLUGIN_SERVER=IPADDR1
+
+# Timeout for each tests (in seconds)
+TIME_OUT_SECONDS=1200
+
+# Tests run as the following user (provide valid login details)
+USERNAME=user1
+PASSWORD=pass1
+
+# Export variables (need to source this file before running tests)
+export DRILL_HOME
+export USERNAME
+export PASSWORD
+export DRILL_VERSION
+export HADOOP_VERSION

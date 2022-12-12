@@ -1,0 +1,36 @@
+{
+    "testId": "ctas-auto-partition-moretypes",
+    "type": "group",
+    "description": "Test tpch queries via jdbc",
+    "categories": [
+        "functional"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.tpchSinglePartition1",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+      {
+        "mode": "rm",
+        "src": "",
+        "dest": "ctas_auto_partition/tpch_single_partition1"
+      },
+      {
+        "mode": "mkdir",
+        "src": "",
+        "dest": "ctas_auto_partition/tpch_single_partition1"
+      },
+      {
+        "mode": "ddl",
+        "src": "Datasources/ctas_auto_partition/ctas_tpch_single_partition1.ddl",
+        "dest": ""
+      }
+    ]
+}

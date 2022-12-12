@@ -1,0 +1,56 @@
+{
+  "testId": "textRead",
+  "type": "group",
+  "description": "Test text read queries",
+  "categories": [
+    "functional"
+  ],
+  "matrices": [
+    {
+      "query-file": ".*.sql",
+      "schema": "dfs",
+      "output-format": "tsv",
+      "expected-file": ".*.e_tsv",
+      "verification-type": [
+        "in-memory"
+      ]
+    }
+  ],
+  "datasources": [
+    {
+      "mode": "rm",
+      "src": "",
+      "dest": "text_storage/drill-4484"
+    },
+    {
+      "mode": "mkdir",
+      "src": "",
+      "dest": "text_storage/drill-4484/20160401/3"
+    },
+    {
+      "mode": "mkdir",
+      "src": "",
+      "dest": "text_storage/drill-4484/20160404"
+    },
+    {
+      "mode": "mkdir",
+      "src": "",
+      "dest": "text_storage/drill-4484/20160501/1"
+    },
+    {
+      "mode": "mkdir",
+      "src": "",
+      "dest": "text_storage/drill-4484/20160501/2"
+    },
+    {
+      "mode": "mkdir",
+      "src": "",
+      "dest": "text_storage/drill-4484/20160502"
+    },
+    {
+      "mode": "cp",
+      "src": "Datasources/text_storage",
+      "dest": "text_storage"
+    }
+  ]
+}

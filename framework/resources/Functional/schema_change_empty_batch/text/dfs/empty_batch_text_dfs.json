@@ -1,0 +1,47 @@
+{
+  "testId": "schema_change_empty_batch_text",
+  "type": "group",
+  "description": "Test drill queries involving empty batches for text files",
+  "submit-type": "jdbc",
+  "categories": [
+    "functional"
+  ],
+  "matrices": [
+    {
+      "query-file": ".*.sql",
+      "schema": "dfs.drillTestDirSchemaChangeEmptyBatch",
+      "output-format": "tsv",
+      "expected-file": ".*.e_tsv",
+      "verification-type": [
+        "in-memory"
+      ]
+    }
+  ],
+  "datasources" : [
+    {
+      "mode": "gen",
+      "src": "Datasources/schema_change_empty_batch/text/dfs/setup.sh $DRILL_TESTDATA_DIR",
+      "dest": ""
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/schema_change_empty_batch/data/psv/part",
+      "dest": "schema_change_empty_batch/psv/part"
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/schema_change_empty_batch/data/psv/partsupp",
+      "dest": "schema_change_empty_batch/psv/partsupp"
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/schema_change_empty_batch/data/psv/empty",
+      "dest": "schema_change_empty_batch/psv/empty"
+    },
+    {
+      "mode": "post_cp",
+      "src": "Datasources/schema_change_empty_batch/data/psv/json_field",
+      "dest": "schema_change_empty_batch/psv/json_field"
+    }
+  ]
+}
